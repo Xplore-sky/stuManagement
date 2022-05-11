@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息展示</title>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>地址</th>
+            <th>密码</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="students:${students}">
+            <td th:text="${students.sno}"></td>
+            <td th:text="${students.sname}"></td>
+            <td th:text="${students.sage}"></td>
+            <td th:text="${students.saddress}"></td>
+            <td th:text="${students.spwd}"></td>
+            <td>
+                <a th:href="@{sendsno(sno=${students.sno})}">更新</a>
+                <a th:href="@{del(sno=${students.sno})}">删除</a>
+            </td>
+        </tr>
+        <a href="/addPage">新增</a>
+    </table>
+
+</body>
+</html>

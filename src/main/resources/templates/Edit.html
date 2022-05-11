@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑</title>
+</head>
+<body>
+<form action="/update" method="post" th:object="${stumodel.student}">
+    学号：<input type="text" name="sno" th:value="*{sno}" readonly>
+    姓名：<input type="text" name="sname" th:value="*{sname}">
+    年龄：<input type="text" name="sage" th:value="*{sage}">
+    地址：<input type="text" name="saddress" th:value="*{saddress}">
+    密码：<input type="text" name="spwd" th:value="*{spwd}">
+    <input type="submit" value="更新">
+</form>
+</body>
+</html>
